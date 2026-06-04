@@ -99,7 +99,7 @@ do
   vim.g.maplocalleader = ' '
 
   -- Set to true if you have a Nerd Font installed and selected in the terminal
-  vim.g.have_nerd_font = false
+  vim.g.have_nerd_font = true
 
   -- [[ Setting options ]]
   --  See `:help vim.o`
@@ -110,7 +110,7 @@ do
   vim.o.number = true
   -- You can also add relative line numbers, to help with jumping.
   --  Experiment for yourself to see if you like it!
-  -- vim.o.relativenumber = true
+  vim.o.relativenumber = true
 
   -- Enable mouse mode, can be useful for resizing splits for example!
   vim.o.mouse = 'a'
@@ -253,6 +253,17 @@ do
   })
 end
 
+  -- indentation options
+  -- vim.opt.tabstop = 4 -- number of spaces a tab counts for
+  -- vim.opt.softtabstop = 4 -- number of spaces a tab inserts in insert mode
+  -- vim.opt.shiftwidth = 4 -- number of spaces for autoindent
+  vim.opt.expandtab = true -- convert tabs to spaces
+  vim.opt.smartindent = true -- automatically indentation
+
+  -- Disable netrw (oil.nvim replaces it; see custom/plugins/oil.lua).
+  vim.g.loaded_netrw = 1
+  vim.g.loaded_netrwPlugin = 1
+
 -- ============================================================
 -- SECTION 3: PLUGIN MANAGER INTRO
 -- vim.pack intro, build hooks
@@ -393,7 +404,7 @@ do
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  vim.cmd.colorscheme 'tokyonight-night'
+  vim.cmd.colorscheme 'evening'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
@@ -976,7 +987,11 @@ do
   -- NOTE: You can add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- require 'custom.plugins'
+  require 'custom.plugins'
+
+  -- Add custom tmux-navigator-plugin
+  require 'custom.plugins.tmux-navigator'.setup()
+
 end
 
 -- The line beneath this is called `modeline`. See `:help modeline`
