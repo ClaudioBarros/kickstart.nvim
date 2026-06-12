@@ -254,9 +254,9 @@ do
 end
 
   -- indentation options
-  -- vim.opt.tabstop = 4 -- number of spaces a tab counts for
-  -- vim.opt.softtabstop = 4 -- number of spaces a tab inserts in insert mode
-  -- vim.opt.shiftwidth = 4 -- number of spaces for autoindent
+  vim.opt.tabstop = 4 -- number of spaces a tab counts for
+  vim.opt.softtabstop = 4 -- number of spaces a tab inserts in insert mode
+  vim.opt.shiftwidth = 4 -- number of spaces for autoindent
   vim.opt.expandtab = true -- convert tabs to spaces
   vim.opt.smartindent = true -- automatically indentation
 
@@ -404,7 +404,7 @@ do
   -- Load the colorscheme here.
   -- Like many other themes, this one has different styles, and you could load
   -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-  vim.cmd.colorscheme 'evening'
+  vim.cmd.colorscheme 'default'
 
   -- Highlight todo, notes, etc in comments
   vim.pack.add { gh 'folke/todo-comments.nvim' }
